@@ -1,4 +1,4 @@
-# === UCLA Calendar Ics Feeds ===
+# === UCLA Multiple Feeds Calendar ===
 Contributors:      UCLA Strategic Communications Digital Team
 Tags:              block
 Tested up to:      6.1
@@ -9,7 +9,7 @@ License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 ## == Description ==
 
 This plugin adds a Gutenberg block that provides an intake form in the page editor to
-input one or many feed name and ICS urls. The front-end displays a calendar of one or many feeds
+input one or many feed name and ICS URLs. The front-end displays a calendar of one or many feeds
 that includes the ability to select the calendars to be displayed.
 
 ## == Installation ==
@@ -18,7 +18,7 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload the plugin files to the `/wp-content/plugins/ucla-calendar-feeds-plugin` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/ucla-multple-feeds-calendar` directory, or install the plugin through the WordPress plugins screen directly.
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
 
