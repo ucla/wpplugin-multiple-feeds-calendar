@@ -1,0 +1,24 @@
+/** 
+* adding the CSS through block.json was not working. There is a ticket for it: 
+* https://wordpress.org/support/topic/custom-gutenberg-block-styles-not-loading-on-frontend/
+*/
+
+/** styles for ics-calendar plugin elements */
+.ics-calendar-title,
+.ics-calendar-description {
+    display: none;
+}
+
+.ucla-select-calendars__form * {
+    margin-right: 8px;
+}
+
+/** styles for ucla-calendar-feeds-plugin plugin elements */
+.ucla-select-calendars__field-select {
+    min-width: 200px;
+    padding: 4px;
+}
+
+.ucla-select-calendars__field-select option:checked {
+    background-color: #B3D7FF;
+}

@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "ucla-misc-blocks/multiple-feeds-calendar",
+    "version": "0.1.0",
+    "title": "UCLA: Multiple Feeds Calendar",
+    "category": "ucla-misc-blocks",
+    "icon": "calendar",
+    "description": "UCLA calendar populated with multiple filterable ICS feeds.",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "feeds": {
+            "type": "array"
+        }
+    },
+    "textdomain": "ucla-multiple-feeds-calendar",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./view.css",
+    "viewScript": "file:./view.js"
+}

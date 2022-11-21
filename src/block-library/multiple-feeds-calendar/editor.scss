@@ -1,0 +1,22 @@
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container .feed-list {
+    max-width: 850px;
+}
+.feed-list__list-wrapper {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.feed-list__list-item {
+    display: flex;
+    margin-bottom: 16px;
+}
+.feed-list__input-feed-name {
+    width: 200px;
+    margin-right: 8px;
+}
+
+.feed-list__input-feed-url {
+    width: 500px;
+    margin-right: 8px;
+}
