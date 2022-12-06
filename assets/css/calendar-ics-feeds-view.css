@@ -22,3 +22,11 @@
 .ucla-select-calendars__field-select option:checked {
     background-color: #B3D7FF;
 }
+
+.ics-calendar-color-key {
+    display: none !important;
+}
+
+.ics-calendar-color-key--visible {
+    display: block !important;
+}

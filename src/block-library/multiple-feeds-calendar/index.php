@@ -33,7 +33,7 @@ function ucla_multiple_feeds_calendar_render_block($attributes, $content, $block
     if (!isset($attributes['feeds'])) {
         $error_text = __('Please add feeds in the page editor.', $ucla_feeds_calendar_text_domain);
         $markup = <<<TEXT
-            <div class="ucla-select-calendars">
+            <div class="ucla-select-calendars__error">
                 <p>{$error_text}</p>
             </div>
         TEXT;
@@ -81,14 +81,20 @@ function ucla_multiple_feeds_calendar_render_block($attributes, $content, $block
     //     </div>
     // TEXT;
 
+    $selected_urls = [];
     foreach ($attributes['feeds'] as $i => $feed) {
         $selected_urls[] = $feed[1];
     }
 
     $shortcode = sprintf('[ics_calendar url="%s" view="month" tz="America/Los_Angeles" eventdesc="true" location="true" organizer="true" attach="true"]', implode('|', $selected_urls));
+    $shortcode = do_shortcode($shortcode);
     //echo $shortcode;
 
-    $markup = do_shortcode($shortcode);
+    $markup = <<<TEXT
+        <div class="ucla-select-calendars">
+            {$shortcode}
+        </div>
+    TEXT;
 
     return $markup;
 }
