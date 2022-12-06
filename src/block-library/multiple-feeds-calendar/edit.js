@@ -33,12 +33,9 @@ const Exit = ({ attributes, setAttributes }) => {
     const errorMsgRef = useRef();
     const [errorMessage, setErrorMessage] = useState('')
 
-    const validate = (value) => {
-
-        if (validator.isURL(value)) {
-            setErrorMessage('Is Valid URL')
-        } else {
-            setErrorMessage('Is Not Valid URL')
+    const validateUrl = (value) => {
+        if (!validator.isURL(value)) {
+            setErrorMessage('Please enter a valid URL')
         }
     };
 

@@ -55,11 +55,9 @@ const Exit = _ref => {
   const newFeedUrlRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const errorMsgRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const [errorMessage, setErrorMessage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-  const validate = value => {
-    if (validator__WEBPACK_IMPORTED_MODULE_4___default().isURL(value)) {
-      setErrorMessage('Is Valid URL');
-    } else {
-      setErrorMessage('Is Not Valid URL');
+  const validateUrl = value => {
+    if (!validator__WEBPACK_IMPORTED_MODULE_4___default().isURL(value)) {
+      setErrorMessage('Please enter a valid URL');
     }
   };
   const addFeedHandler = (nameRef, urlRef) => {
