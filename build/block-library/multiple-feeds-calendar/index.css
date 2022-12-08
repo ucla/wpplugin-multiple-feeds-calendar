@@ -5,25 +5,188 @@
   max-width: 850px;
 }
 
-.feed-list__list-wrapper {
+.feed-list {
+  /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+  /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+  /**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+}
+.feed-list * {
+  color: #333 !important;
+  font-family: "Helvetica", "Arial", sans-serif !important;
+}
+.feed-list h3 {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  line-height: 1.125 !important;
+  margin-bottom: 1rem !important;
+}
+.feed-list .feed-list__list-wrapper {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
-.feed-list__list-item {
+.feed-list .feed-list__list-item {
   display: flex;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+.feed-list .feed-list__list-item * {
   margin-bottom: 16px;
 }
-
-.feed-list__input-feed-name {
-  width: 200px;
+.feed-list .feed-list__input-feed-name {
+  width: 100%;
   margin-right: 8px;
 }
-
-.feed-list__input-feed-url {
-  width: 500px;
+.feed-list .feed-list__input-feed-url {
+  width: 100%;
   margin-right: 8px;
+}
+@media screen and (min-width: 768px) {
+  .feed-list .feed-list__list-item {
+    align-items: center;
+    flex-direction: row;
+  }
+  .feed-list .feed-list__input-feed-name {
+    width: 300px;
+  }
+}
+.feed-list .text__input {
+  box-sizing: border-box;
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+  background: #ebebeb !important;
+  background-size: 24px !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  padding: 8px 24px 8px 16px !important;
+  border: 1px solid gray !important;
+  border-radius: 2px !important;
+  color: #666 !important;
+}
+.feed-list .text__input:focus {
+  outline: 3px solid #2774ae !important;
+  outline-offset: 1px !important;
+  box-shadow: none !important;
+}
+.feed-list .text__label,
+.feed-list .text__input,
+.feed-list .text__help,
+.feed-list .text__error {
+  display: block;
+}
+.feed-list input,
+.feed-list select {
+  vertical-align: middle;
+}
+.feed-list .text__help {
+  display: block;
+  color: #666 !important;
+  margin-top: 8px;
+}
+.feed-list .btn--lightbg {
+  background: #00598c !important;
+  color: #fff !important;
+}
+.feed-list .btn--lightbg:hover {
+  background: #0079bf !important;
+}
+.feed-list .btn--lightbg:active {
+  background: #003b5c !important;
+  outline: none;
+}
+.feed-list .btn--lightbg:focus {
+  background: #0079bf !important;
+  outline: 1px solid #0079bf !important;
+  outline-offset: 2px;
+}
+.feed-list .btn:focus {
+  outline: none;
+}
+.feed-list .btn {
+  padding: 10px 16px !important;
+  font-size: 1rem !important;
+  line-height: 1rem;
+  font-weight: bold;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.feed-list button {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+.feed-list button,
+.feed-list input {
+  /* 1 */
+  overflow: visible;
+}
+.feed-list button {
+  /* 1 */
+  text-transform: none;
+}
+.feed-list button,
+.feed-list [type=button],
+.feed-list [type=reset],
+.feed-list [type=submit] {
+  -webkit-appearance: button;
+}
+.feed-list button::-moz-focus-inner,
+.feed-list [type=button]::-moz-focus-inner,
+.feed-list [type=reset]::-moz-focus-inner,
+.feed-list [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+.feed-list button:-moz-focusring,
+.feed-list [type=button]:-moz-focusring,
+.feed-list [type=reset]:-moz-focusring,
+.feed-list [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+.feed-list .alert--error {
+  border-color: #d60000;
+}
+.feed-list .alert {
+  padding: 16px;
+  border-width: 4px;
+  border-style: solid;
+  line-height: 1.5;
+}
+.feed-list .alert img {
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+.feed-list .error--red {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #d60000;
 }
 
 /*# sourceMappingURL=index.css.map*/

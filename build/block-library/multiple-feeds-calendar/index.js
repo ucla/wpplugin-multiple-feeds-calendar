@@ -2,6 +2,43 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./assets/images/form-error.svg":
+/*!**************************************!*\
+  !*** ./assets/images/form-error.svg ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ReactComponent": function() { return /* binding */ SvgFormError; }
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgFormError = function SvgFormError(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    width: 48,
+    height: 48,
+    xmlns: "http://www.w3.org/2000/svg",
+    style: {
+      enableBackground: "new 0 0 48 48"
+    },
+    xmlSpace: "preserve"
+  }, props), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4zm2 30h-4v-4h4v4zm0-8h-4V14h4v12z",
+    style: {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      fill: "#d60000"
+    }
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ4IDQ4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OCA0OCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHRpdGxlPkVycm9yPC90aXRsZT48c3R5bGU+LmVycm9yLS1yZWR7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojZDYwMDAwfTwvc3R5bGU+PHBhdGggY2xhc3M9ImVycm9yLS1yZWQiIGQ9Ik0yNCA0QzEzIDQgNCAxMyA0IDI0czkgMjAgMjAgMjAgMjAtOSAyMC0yMFMzNSA0IDI0IDR6bTIgMzBoLTR2LTRoNHY0em0wLThoLTRWMTRoNHYxMnoiLz48L3N2Zz4=");
+
+/***/ }),
+
 /***/ "./src/block-library/multiple-feeds-calendar/edit.js":
 /*!***********************************************************!*\
   !*** ./src/block-library/multiple-feeds-calendar/edit.js ***!
@@ -15,9 +52,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! validator */ "./node_modules/validator/index.js");
-/* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(validator__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! validator */ "./node_modules/validator/index.js");
+/* harmony import */ var validator__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(validator__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./src/block-library/multiple-feeds-calendar/editor.scss");
+/* harmony import */ var _assets_images_form_error_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/images/form-error.svg */ "./assets/images/form-error.svg");
 
 /**
  * Retrieves the translation of text.
@@ -41,6 +79,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const textDomain = 'ucla-multiple-feeds-calendar';
 const Exit = _ref => {
   let {
@@ -55,29 +94,27 @@ const Exit = _ref => {
   const newFeedUrlRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const errorMsgRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const [errorMessage, setErrorMessage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-  const validateUrl = value => {
-    if (!validator__WEBPACK_IMPORTED_MODULE_4___default().isURL(value)) {
-      setErrorMessage('Please enter a valid URL');
-    }
-  };
+  let clickedAddButton = false;
   const addFeedHandler = (nameRef, urlRef) => {
+    clickedAddButton = true;
     const name = nameRef.current.value;
     const url = urlRef.current.value;
-    if (name !== '' && url !== '') {
+    if (validateName(nameRef.current) && validateUrl(urlRef.current)) {
+      clickedAddButton = false;
       feeds.push([name, url]);
       nameRef.current.value = '';
       urlRef.current.value = '';
       updateFeeds(feeds);
-    } else {
-      // empty fields error messaging
     }
   };
   const updateNameHandler = (e, index) => {
+    validateName(e.target);
     const newFeed = [e.target.value, feeds[index][1]];
     feeds[index] = newFeed;
     updateFeeds(feeds);
   };
   const updateUrlHandler = (e, index) => {
+    validateUrl(e.target);
     const newFeed = [feeds[index][0], e.target.value];
     feeds[index] = newFeed;
     updateFeeds(feeds);
@@ -91,9 +128,33 @@ const Exit = _ref => {
     feeds.pop(index);
     updateFeeds(feeds);
   };
+  const validateName = el => {
+    if (!el.value.length) {
+      setErrorMessage('Please enter a name.');
+      return false;
+    } else {
+      setErrorMessage('');
+      return true;
+    }
+  };
+  const validateUrl = el => {
+    if (el.id === 'feed-list-add-url' && !clickedAddButton) {
+      console.log("hasn't clicked add yet");
+      return;
+    }
+    if (!validator__WEBPACK_IMPORTED_MODULE_5___default().isURL(el.value)) {
+      setErrorMessage('Please enter a valid  URL.');
+      return false;
+    } else {
+      setErrorMessage('');
+      return true;
+    }
+  };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "feed-list"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Manage Calender Feeds")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Please save the your changes using the update button at the top of this page once all changes are complete otherwise changes will be lost. "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ErrorMessage, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Manage Calender Feeds", textDomain)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    class: "text__help"
+  }, "Please save the your changes using the update button at the top of this page once all changes are complete otherwise changes will be lost. "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(ErrorMessage, {
     message: errorMessage
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     className: "feed-list__list-wrapper"
@@ -110,17 +171,24 @@ const Exit = _ref => {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     className: "feed-list__list-item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    onChange: function (e) {
+      validateName(e.target);
+    },
     type: "text",
-    className: "feed-list__input-feed-name",
+    className: "feed-list__input-feed-name text__input",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Feed Name", textDomain),
     ref: newFeedNameRef
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    onChange: function (e) {
+      validateUrl(e.target);
+    },
+    id: "feed-list-add-url",
     type: "url",
-    className: "feed-list__input-feed-url",
+    className: "feed-list__input-feed-url text__input",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Feed URL", textDomain),
     ref: newFeedUrlRef
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    className: "feed-list__btn feed-list__btn-feed-add",
+    className: "feed-list__add-button btn btn--lightbg",
     isPressed: true,
     onClick: function () {
       addFeedHandler(newFeedNameRef, newFeedUrlRef);
@@ -145,7 +213,7 @@ const FeedListItem = _ref3 => {
     onChange: function (name) {
       updateNameHandler(name, index);
     },
-    className: "feed-list__input-feed-name",
+    className: "feed-list__input-feed-name text__input",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Feed Name", textDomain),
     value: name
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
@@ -153,10 +221,11 @@ const FeedListItem = _ref3 => {
     onChange: function (name) {
       updateUrlHandler(name, index);
     },
-    className: "feed-list__input-feed-url",
+    className: "feed-list__input-feed-url text__input",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Feed URL", textDomain),
     value: url
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    className: "feed-list__remove-button btn btn--lightbg",
     isPressed: true,
     onClick: function () {
       removeFeedHandler(index);
@@ -165,11 +234,15 @@ const FeedListItem = _ref3 => {
 };
 const ErrorMessage = _ref4 => {
   let {
-    message = null
+    message = ''
   } = _ref4;
-  return message ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "errorMsg"
-  }, message) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null);
+  return message.length ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
+    class: "alert alert--error",
+    role: "alert"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: _assets_images_form_error_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+    alt: "error"
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figcaption", null, message)) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null);
 };
 /* harmony default export */ __webpack_exports__["default"] = (Exit);
 
@@ -7690,6 +7763,16 @@ function whitelist(str, chars) {
 
 module.exports = exports.default;
 module.exports["default"] = exports.default;
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ (function(module) {
+
+module.exports = window["React"];
 
 /***/ }),
 
