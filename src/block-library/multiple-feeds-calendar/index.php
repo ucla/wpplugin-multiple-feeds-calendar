@@ -86,12 +86,12 @@ function ucla_multiple_feeds_calendar_render_block($attributes, $content, $block
         $selected_urls[] = $feed[1];
     }
 
-    $shortcode = sprintf('[ics_calendar url="%s" view="month" tz="America/Los_Angeles" eventdesc="true" location="true" organizer="true" attach="true"]', implode('|', $selected_urls));
+    $shortcode = sprintf('[ics_calendar url="%s" format="D n/j" view="month" tz="America/Los_Angeles" eventdesc="true" location="true" organizer="true" attach="true"]', implode('|', $selected_urls));
     $shortcode = do_shortcode($shortcode);
     //echo $shortcode;
 
     $markup = <<<TEXT
-        <div class="ucla-select-calendars">
+        <div class="ucla-multiple-feeds-calendar alignwide">
             {$shortcode}
         </div>
     TEXT;

@@ -2,8 +2,64 @@
 * adding the CSS through block.json was not working. There is a ticket for it: 
 * https://wordpress.org/support/topic/custom-gutenberg-block-styles-not-loading-on-frontend/
 */
-
 /** styles for ics-calendar plugin elements */
+
+.ucla-multiple-feeds-calendar * {
+    font-family: Helvetica, Roboto, Arial, sans-serif;
+    color: #333;
+}
+
+.ics-calendar-month-grid * {
+    font-size: 1rem !important;
+}
+
+.ucla-multiple-feeds-calendar .day .phone_only {
+    display: inline-block !important
+}
+
+.ucla-multiple-feeds-calendar .day .no_phone {
+    display: none
+}
+
+.ucla-multiple-feeds-calendar h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2.125;
+    margin-bottom: unset !important;
+}
+
+.ics-calendar-month-grid a {
+    color: #00598c;
+}
+
+.ics-calendar-month-grid a:active {
+    color: #fff;
+    background-color: #003b5c;
+}
+
+.ics-calendar-month-grid a:focus {
+    color: #fff;
+    background-color: #0079bf;
+    outline: 0;
+}
+
+.ics-calendar-month-grid a:hover {
+    color: #fff;
+    background-color: #0079bf;
+}
+
+.ics-calendar-month-grid thead {
+    border-bottom: 2px solid white !important
+}
+
+.ics-calendar-month-grid th {
+    font-weight: normal;
+    font-size: 18px !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+
 .ics-calendar-title,
 .ics-calendar-description {
     display: none;
@@ -24,9 +80,113 @@
 }
 
 .ics-calendar-color-key {
-    display: none !important;
+    /* display: none !important; */
+    font-size: unset !important;
+    margin-bottom: 1rem !important;
+    display: flex !important;
+    flex-direction: column;
 }
+
+.ics-calendar-color-key label {
+    display: flex;
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+}
+
+.ics-calendar-color-key-item {
+    border-left: unset !important;
+    line-height: unset !important;
+    padding: 0px !important;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
 
 .ics-calendar-color-key--visible {
     display: block !important;
+}
+
+.ics-calendar-month-grid th {
+    background: #EBEBEB !important;
+    border: none !important;
+}
+
+.ics-calendar-color-key h4 {
+    font-family: Helvetica, Roboto, Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.ics-calendar-color-key [type=checkbox] {
+    appearance: none;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0%), inset 0 -15px 10px -12px rgb(0 0 0 / 0%);
+    padding: 9px !important;
+    border-radius: 2px;
+    display: inline-block;
+    margin-right: 8px !important;
+    overflow: visible;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.ics-calendar-color-key [type=checkbox]:checked {
+    background-color: #003b5c;
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0%), inset 0 -15px 10px -12px rgb(0 0 0 / 0%);
+}
+
+.ics-calendar-color-key [type=checkbox]:focus {
+    outline: 1px solid #0079bf;
+    outline-offset: 1px;
+}
+
+.ics-calendar-color-key [type=checkbox]:hover {
+    background: #0079bf;
+    cursor: pointer;
+}
+
+.ics-calendar-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #ebebeb url('https://webcomponents.ucla.edu/build/1.0.0/icons/denotive/down--blue.svg') no-repeat 98.5% 50%;
+    background-size: 24px;
+    padding: 8px 24px 8px 16px;
+    border: 1px solid #808080;
+    border-radius: 2px;
+    color: #666;
+    margin-bottom: 1.5rem !important
+}
+
+.ics-calendar-select::-ms-expand {
+    display: none;
+    /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
+}
+
+.ics-calendar-select:focus {
+    outline: 3px solid #2774ae;
+    outline-offset: 1px;
+}
+
+.ics-calendar-select:active {
+    color: #000;
+}
+
+
+
+/** Tablet and above */
+@media screen and (min-width:768px) {
+    .ucla-multiple-feeds-calendar .day .phone_only {
+        display: none !important;
+    }
+
+    .ucla-multiple-feeds-calendar .day .no_phone {
+        display: inline-block;
+    }
 }
