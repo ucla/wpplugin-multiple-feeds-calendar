@@ -2,17 +2,15 @@
 
 /**
  * Plugin Name:       UCLA Multiple Feeds Calendar Plugin
- * Description:       View one or many ics feeds in a single feed filterable calendar using a Gutenberg block. This plugin depends on the ics calendar plugin: https://icscalendar.com/preview/
+ * Description:       View one or many ICS calendar feeds in a single filterable calendar using a Gutenberg block. This plugin depends on the ICS calendar plugin: https://icscalendar.com/preview/
  * Requires at least: 5.8
  * Requires PHP:      7.0
- * Version:           0.1.0
- * Author:            The WordPress Contributors
+ * Version:           1.0
+ * Author:            UCLA Strategic Communications, Digital Team
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       ucla-multiple-feeds-calendar
  *
- * @package           create-block
- * 
  * This block depends on the ics calendar plugin: https://icscalendar.com/preview/
  */
 

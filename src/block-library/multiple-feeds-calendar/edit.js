@@ -5,17 +5,6 @@
  */
 import { __ } from '@wordpress/i18n';
 
-/**
- * Test feeds:
- * https://calendar.google.com/calendar/ical/ucla.esat%40gmail.com/public/basic.ics
- * https://calendar.google.com/calendar/ical/eloving%40g.ucla.edu/public/basic.ics
- * https://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics
- * https://community.ucla.edu/api/v1/ucla/holidays.ics
- * https://community.ucla.edu/api/v1/ucla/gateway.ics
- * https://community.ucla.edu/api/v1/program/staffassembly.ics
- * 
- */
-
 import { Button } from '@wordpress/components';
 import { useState, useRef } from '@wordpress/element';
 import validator from 'validator';
@@ -35,6 +24,14 @@ const Exit = ({ attributes, setAttributes }) => {
     const [errorMessage, setErrorMessage] = useState('');
     let clickedAddButton = false;
 
+    /**
+     * 
+     * @param {*} nameRef - reference to name input element for feed being added
+     * @param {*} urlRef - reference to URL input element for feed being added
+     * 
+     * 
+     *  
+     */
 
     const addFeedHandler = (nameRef, urlRef) => {
         clickedAddButton = true;

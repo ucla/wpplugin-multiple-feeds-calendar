@@ -59,6 +59,17 @@
     padding-bottom: 1rem !important;
 }
 
+.ics-calendar-month-grid .events .all-day-indicator {
+    font-weight: 700 !important;
+}
+
+.ics-calendar-month-grid .events .title {
+    font-weight: 400;
+}
+
+.ics-calendar-month-grid .events .title_in_hover_block .title {
+    font-weight: 700;
+}
 
 .ics-calendar-title,
 .ics-calendar-description {
@@ -80,7 +91,6 @@
 }
 
 .ics-calendar-color-key {
-    /* display: none !important; */
     font-size: unset !important;
     margin-bottom: 1rem !important;
     display: flex !important;
@@ -98,7 +108,7 @@
     line-height: unset !important;
     padding: 0px !important;
     margin-bottom: 1rem;
-    display: inline-block;
+    display: inline-flex;
 }
 
 
@@ -133,13 +143,14 @@
     line-height: 1.15;
     margin: 0;
     box-sizing: border-box;
-    padding: 0;
+    padding: 2px;
 }
 
 .ics-calendar-color-key [type=checkbox]:checked {
-    background-color: #003b5c;
     border: 1px solid #adb8c0;
     box-shadow: 0 1px 2px rgb(0 0 0 / 0%), inset 0 -15px 10px -12px rgb(0 0 0 / 0%);
+    background: #003b5c url('../images/icon_checkbox_check.png') no-repeat center;
+    background-size: 9px 9px;
 }
 
 .ics-calendar-color-key [type=checkbox]:focus {

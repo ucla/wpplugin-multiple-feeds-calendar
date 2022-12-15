@@ -64,18 +64,6 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-/**
- * Test feeds:
- * https://calendar.google.com/calendar/ical/ucla.esat%40gmail.com/public/basic.ics
- * https://calendar.google.com/calendar/ical/eloving%40g.ucla.edu/public/basic.ics
- * https://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics
- * https://community.ucla.edu/api/v1/ucla/holidays.ics
- * https://community.ucla.edu/api/v1/ucla/gateway.ics
- * https://community.ucla.edu/api/v1/program/staffassembly.ics
- * 
- */
-
-
 
 
 
@@ -95,6 +83,16 @@ const Exit = _ref => {
   const errorMsgRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const [errorMessage, setErrorMessage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   let clickedAddButton = false;
+
+  /**
+   * 
+   * @param {*} nameRef - reference to name input element for feed being added
+   * @param {*} urlRef - reference to URL input element for feed being added
+   * 
+   * 
+   *  
+   */
+
   const addFeedHandler = (nameRef, urlRef) => {
     clickedAddButton = true;
     const name = nameRef.current.value;

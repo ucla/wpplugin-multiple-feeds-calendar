@@ -1,14 +1,6 @@
 <?php
 
 /**
- * Test feeds:
- * https://calendar.google.com/calendar/ical/ucla.esat%40gmail.com/public/basic.ics
- * https://calendar.google.com/calendar/ical/eloving%40g.ucla.edu/public/basic.ics
- * https://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics
- * 
- */
-
-/**
  * Renders the 'ucla-misc-blocks/multiple-feeds-calendar' block on server.
  *
  * @param array    $attributes The block attributes.

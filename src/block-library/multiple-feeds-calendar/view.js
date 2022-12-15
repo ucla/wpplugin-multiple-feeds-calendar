@@ -32,7 +32,16 @@ const uclaCalendarIcsFeedsBlock = {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
 
+
+});
+
+return;
+/**
+ * No longer moving filter to the bottom per Gary S., Paul C., and Bene.
+ * 
+*/
 document.addEventListener('DOMContentLoaded', function () {
     /** 
      * The filter code below is no longer needed for now. Bene and Paul suggested using the filter that
@@ -49,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
      * 
      * No longer moving to the bottom per Gary S., Paul C., and Bene.
      */
-    return;
     const calFilter = document.querySelector('.ics-calendar-color-key');
     const calFilterWrapper = document.querySelector('.ics-calendar');
     const filterWrapper = document.createElement('div');
