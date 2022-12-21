@@ -56,14 +56,14 @@ const uclaCalendarIcsFeedsBlock = {
     e.preventDefault();
     const filters = this.getAllCalFilters();
     filters.forEach(function (filter) {
-      filter.checked = true;
+      if (!filter.checked) filter.click();
     });
   },
   unselectAllCalFilters: function (e) {
     e.preventDefault();
     const filters = this.getAllCalFilters();
     filters.forEach(function (filter) {
-      filter.checked = false;
+      if (filter.checked) filter.click();
     });
   },
   getAllCalFilters: function () {

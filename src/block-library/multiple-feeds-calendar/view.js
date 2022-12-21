@@ -61,7 +61,7 @@ const uclaCalendarIcsFeedsBlock = {
         e.preventDefault();
         const filters = this.getAllCalFilters();
         filters.forEach(function (filter) {
-            filter.checked = true;
+            if (!filter.checked) filter.click();
 
         });
     },
@@ -70,7 +70,7 @@ const uclaCalendarIcsFeedsBlock = {
         e.preventDefault();
         const filters = this.getAllCalFilters();
         filters.forEach(function (filter) {
-            filter.checked = false;
+            if (filter.checked) filter.click();
         });
     },
 
