@@ -28,22 +28,22 @@
     margin-bottom: unset !important;
 }
 
-.ics-calendar-month-grid a {
+.ics-calendar a {
     color: #00598c;
 }
 
-.ics-calendar-month-grid a:active {
+.ics-calendar a:active {
     color: #fff;
     background-color: #003b5c;
 }
 
-.ics-calendar-month-grid a:focus {
+.ics-calendar a:focus {
     color: #fff;
     background-color: #0079bf;
     outline: 0;
 }
 
-.ics-calendar-month-grid a:hover {
+.ics-calendar a:hover {
     color: #fff;
     background-color: #0079bf;
 }
@@ -93,8 +93,11 @@
 .ics-calendar-color-key {
     font-size: unset !important;
     margin-bottom: 1rem !important;
-    display: flex !important;
     flex-direction: column;
+}
+
+.ics-calendar-color-key.ics-calendar-color-key--visible {
+    display: flex !important;
 }
 
 .ics-calendar-color-key label {
@@ -121,11 +124,14 @@
     border: none !important;
 }
 
-.ics-calendar-color-key h4 {
-    font-family: Helvetica, Roboto, Arial, sans-serif;
+.ics-calendar__filter h4 {
     font-size: 1.5rem;
     line-height: 1.875rem;
     font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.ics-calendar__filter-select-all-links {
     margin-bottom: 1.5rem;
 }
 

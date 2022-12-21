@@ -18,5 +18,6 @@
   "textdomain": "ucla-multiple-feeds-calendar",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./view.css"
+  "style": "file:./view.css",
+  "viewScript": "file:./view.js"
 }

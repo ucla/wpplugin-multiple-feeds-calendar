@@ -29,19 +29,58 @@ const uclaCalendarIcsFeedsBlock = {
         }
 
         return false;
+    },
+
+    getUnselectSelectAllLinkComponent: function () {
+        const d = document;
+        const wrapper = d.createElement('div');
+        wrapper.classList = "ics-calendar__filter-select-all-links";
+
+        const unselectLink = d.createElement('a');
+        const unselectLinkContent = d.createTextNode('Unselect All');
+        unselectLink.append(unselectLinkContent);
+        unselectLink.addEventListener('click', function (e) { this.unselectAllCalFilters(e) }.bind(this));
+
+        const separationEl = d.createElement('span');
+        const separationElContent = d.createTextNode(' \\ ');
+        separationEl.append(separationElContent)
+
+        const selectLink = d.createElement('a');
+        const selectLinkContent = d.createTextNode('Select All');
+        selectLink.append(selectLinkContent);
+        selectLink.addEventListener('click', function (e) { this.selectAllCalFilters(e) }.bind(this));
+
+        wrapper.append(unselectLink);
+        wrapper.append(separationEl);
+        wrapper.append(selectLink);
+        return wrapper;
+    },
+
+
+    selectAllCalFilters: function (e) {
+        e.preventDefault();
+        const filters = this.getAllCalFilters();
+        filters.forEach(function (filter) {
+            filter.checked = true;
+
+        });
+    },
+
+    unselectAllCalFilters: function (e) {
+        e.preventDefault();
+        const filters = this.getAllCalFilters();
+        filters.forEach(function (filter) {
+            filter.checked = false;
+        });
+    },
+
+    getAllCalFilters: function () {
+        return document.querySelectorAll('.ics-calendar-color-key-item input');
     }
+
 }
 
-document.addEventListener('DOMContentLoaded', function () {
 
-
-});
-
-return;
-/**
- * No longer moving filter to the bottom per Gary S., Paul C., and Bene.
- * 
-*/
 document.addEventListener('DOMContentLoaded', function () {
     /** 
      * The filter code below is no longer needed for now. Bene and Paul suggested using the filter that
@@ -56,22 +95,26 @@ document.addEventListener('DOMContentLoaded', function () {
      * Move the ICS Calendar plugin default filter to below the calendar. Per Bene and Paul mockup.
      * https://www.figma.com/file/jSluE5XyTLaZztyZ2LViif/Calendar?node-id=0%3A1&t=p5QjXwPoMPpgkKGM-1
      * 
-     * No longer moving to the bottom per Gary S., Paul C., and Bene.
      */
-    const calFilter = document.querySelector('.ics-calendar-color-key');
-    const calFilterWrapper = document.querySelector('.ics-calendar');
-    const filterWrapper = document.createElement('div');
+    const d = document;
+    const calFilter = d.querySelector('.ics-calendar-color-key');
+    const calFilterWrapper = d.querySelector('.ics-calendar');
+    const filterWrapper = d.createElement('div');
     filterWrapper.classList = 'ics-calendar__filter';
-    const header = document.createElement('h4');
-    const headerContent = document.createTextNode('Calendar Display Filter');
-    header.appendChild(headerContent);
-    filterWrapper.appendChild(header);
+
+    const header = d.createElement('h4');
+    const headerContent = d.createTextNode('Calendar Display Filter');
+    header.append(headerContent);
+
+    filterWrapper.append(header);
+    const selectUnselectLinks = uclaCalendarIcsFeedsBlock.getUnselectSelectAllLinkComponent();
+    filterWrapper.append(selectUnselectLinks);
+
     if (typeof calFilter !== 'undefined' && typeof calFilterWrapper !== 'undefined') {
         calFilter.remove();
-        filterWrapper.appendChild(calFilter)
-        calFilterWrapper.appendChild(filterWrapper);
+        filterWrapper.append(calFilter)
         calFilter.classList = "ics-calendar-color-key ics-calendar-color-key--visible"
+        calFilterWrapper.prepend(filterWrapper);
     }
-
 });
 
