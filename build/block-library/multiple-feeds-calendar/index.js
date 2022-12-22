@@ -69,18 +69,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const textDomain = 'ucla-multiple-feeds-calendar';
-const Exit = _ref => {
+const Edit = _ref => {
   let {
     attributes,
     setAttributes
   } = _ref;
   const {
-    feeds = [],
-    className = false
+    feeds = []
   } = attributes;
   const newFeedNameRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const newFeedUrlRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  const errorMsgRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   const [errorMessage, setErrorMessage] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
   let clickedAddButton = false;
 
@@ -89,8 +87,6 @@ const Exit = _ref => {
    * @param {*} nameRef - reference to name input element for feed being added
    * @param {*} urlRef - reference to URL input element for feed being added
    * 
-   * 
-   *  
    */
 
   const addFeedHandler = (nameRef, urlRef) => {
@@ -242,7 +238,7 @@ const ErrorMessage = _ref4 => {
     alt: "error"
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("figcaption", null, message)) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null);
 };
-/* harmony default export */ __webpack_exports__["default"] = (Exit);
+/* harmony default export */ __webpack_exports__["default"] = (Edit);
 
 /***/ }),
 

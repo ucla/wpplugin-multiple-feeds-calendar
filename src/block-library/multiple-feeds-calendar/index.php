@@ -11,13 +11,6 @@
  */
 function ucla_multiple_feeds_calendar_render_block($attributes, $content, $block)
 {
-    /** 
-     * Get ucla-calendar-feeds-plugin cookie and set selected based on value of cookie
-     * See ./view.js
-     * 
-     * Always display the first calendar if none selected.
-     * 
-     */
 
     global $ucla_feeds_calendar_text_domain;
 
@@ -32,46 +25,6 @@ function ucla_multiple_feeds_calendar_render_block($attributes, $content, $block
 
         return $markup;
     }
-
-    // /**
-    //  * If selection of feeds is already provided through a cookie the parse the cookie and 
-    //  * display the calendar for the selected feeds.
-    //  */
-
-    // if (isset($_COOKIE['ucla-calendar-feeds-plugin'])) {
-    //     $selected_ids = explode(',', $_COOKIE['ucla-calendar-feeds-plugin']);
-    // } else $selected_ids = ['0'];
-
-    // $label = __('Include Multiple Calendars', $ucla_feeds_calendar_text_domain);
-
-    // $markup = <<<TEXT
-    //     <div class="ucla-select-calendars">
-    //         <form id="ucla-select-calendars__form" class="ucla-select-calendars__form">
-    //             <label for="cals">{$label}:</label>
-    //             <select name="cals" id="cals" multiple="multiple" size="2" class="ucla-select-calendars__field-select">
-    // TEXT;
-
-    // foreach ($attributes['feeds'] as $i => $feed) {
-
-    //     if (count($selected_ids) > 0 && $i == $selected_ids[0]) {
-    //         $opt_markup = '<option value="%s" selected="selected">%s</option>';
-    //         array_shift($selected_ids);
-    //         $selected_urls[] = $feed[1];
-    //     } else {
-    //         $opt_markup = '<option value="%s">%s</option>';
-    //     }
-
-    //     $markup .= sprintf($opt_markup, $i, esc_html($feed[0]));
-    // }
-
-    // $submit_text = __('Select Feeds', $ucla_feeds_calendar_text_domain);
-    // $markup .= <<<TEXT
-
-    //             </select>
-    //             <button type="submit">{$submit_text}</button>
-    //         </form>
-    //     </div>
-    // TEXT;
 
     $selected_urls = [];
     foreach ($attributes['feeds'] as $i => $feed) {
@@ -117,7 +70,6 @@ add_action('init', 'ucla_multiple_feeds_calendar_register_blocks');
  * see WP ticket: https://wordpress.org/support/topic/custom-gutenberg-block-styles-not-loading-on-frontend/
  * 
  */
-
 function ucla_multiple_feeds_calendar_enqueue_assets()
 {
     global $ucla_feeds_calendar_plugin_url;

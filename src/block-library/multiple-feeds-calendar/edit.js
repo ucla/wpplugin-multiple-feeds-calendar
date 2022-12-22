@@ -13,14 +13,12 @@ import errorIcon from '../../../assets/images/form-error.svg';
 
 const textDomain = 'ucla-multiple-feeds-calendar';
 
-const Exit = ({ attributes, setAttributes }) => {
+const Edit = ({ attributes, setAttributes }) => {
     const {
-        feeds = [],
-        className = false
+        feeds = []
     } = attributes;
     const newFeedNameRef = useRef();
     const newFeedUrlRef = useRef();
-    const errorMsgRef = useRef();
     const [errorMessage, setErrorMessage] = useState('');
     let clickedAddButton = false;
 
@@ -29,8 +27,6 @@ const Exit = ({ attributes, setAttributes }) => {
      * @param {*} nameRef - reference to name input element for feed being added
      * @param {*} urlRef - reference to URL input element for feed being added
      * 
-     * 
-     *  
      */
 
     const addFeedHandler = (nameRef, urlRef) => {
@@ -148,4 +144,4 @@ const ErrorMessage = ({ message = '' }) => {
         <></>;
 }
 
-export default Exit;
+export default Edit;
