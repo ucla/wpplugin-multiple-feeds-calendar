@@ -18,21 +18,34 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload the plugin files to the `/wp-content/plugins/ucla-multple-feeds-calendar` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
+1. Download a distribution of the codebase by downloading a zip of the main branch from the repository.
+
+2. Unzip the plugin files into a temporary directory of your choosing.
+
+3. Upload the plugin files to the `/wp-content/plugins/ucla-multple-feeds-calendar` directory of your WordPress installation either locally or on a server or install the plugin through the WordPress plugins installation screen directly.
+
+4. Activate the plugin through the 'Plugins' screen in WordPress
+
+
+## == Local Development ==
+
+1. Install WordPress using the method of your choosing. We recommend using DevKinsta, the Wordpress Development Environment found here https://developer.wordpress.org/block-editor/getting-started/devenv/ or another method of installing WordPress locally.
+
+2. Clone the repository into the /wp-content/plugins/ folder of your local install. 
+
+3. Use NVM to load Node version 18.7.0
+
+4. Run npm install using Node version 18.7.0
+
+5. Activate the plugin through the 'Plugins' screen in WordPress.
 
 
 ## == Frequently Asked Questions ==
 
-## = A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
 
 ## == Changelog ==
 
-### = 0.1.0 =
-* Release
+### = 1.0 =
+* Initial Release
+
+
